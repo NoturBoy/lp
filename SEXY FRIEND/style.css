@@ -1,173 +1,353 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-snap-type: y mandatory;
-}
-
 body {
-  color: white;
-  background-color: black;
-  height: 98vh;
-  display: grid;
-  place-items: center;
+    padding: 0px;
+    margin: 0px;
+width: 100%;
+height: 100%;
 }
 
-.app__videos {
-  position: relative;
-  height: 750px;
-  background-color: white;
-  overflow: scroll;
-  width: 100%;
-  max-width: 400px;
-  scroll-snap-type: y mandatory;
-  border-radius: 20px;
-}
-
-.app__videos::-webkit-scrollbar {
-  display: none;
-}
-
-.app__videos {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.video {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  scroll-snap-align: start;
-}
-
-.video__player {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  opacity: 0.85;
-}
-
-.videoSidebar {
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important; text-transform:uppercase;letter-spacing:1px;transition: all 0.2s ease-out;text-decoration:none !important;
-  font-size: 12px;
-  position: absolute;
-  top: 30%;
-  right: 10px;
-}
-
-.videoSidebar .material-icons {
-  font-size: 28px;
-  cursoro: pointero;
-}
-
-.videoSidebar__button {
-  padding: 16px;
-  text-align: center;
-}
-
-.videoFooter {
-  position: relative;
-  bottom: 35%;
-  text-align: center;
-  color: white;
-  display: flex;
-  align-items: center;
-
-}
-
-.videoFooter1 {
-  position: relative;
-  bottom: 30%;
-  text-align: center;
-  color: white;
-  display: flex;
-  align-items: center;
-
-}
-
-@keyframes spinTheRecord {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.videoFooter__record {
-  animation: spinTheRecord infinite 5s linear;
-  height: 50px;
-  filter: invert(1);
-  position: absolute;
-  bottom: 0;
-  right: 20px;
-}
-
-.videoFooter__text {
-  flex: 1;
-}
-
-.videoFooter__text h3 {
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important; text-transform:uppercase; letter-spacing:1px;transition: all 0.2s ease-out;text-decoration:none !important;
-  font-size: 17px;
-  padding-bottom: 15px;
-}
-
-.videoFooter__icon {
-  position: absolute;
-}
-
-.videoFooter__ticker {
-  width: 400px;
-  display: flex;
-  align-items: center;
-}
-
-.videoFooter__ticker marquee {
-  height: fit-content;
-  margin-left: 30px;
-  width: 60%;
-}
-
-.videoFooter__description {
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important; text-transform:uppercase;letter-spacing:1px;transition: all 0.2s ease-out;text-decoration:none !important;
-  font-size: 13px;
-  font-weight: 600;
-  padding-bottom: 20px;
-}
-
-@media (max-width: 425px) {
-  .app__videos {
+header {
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
     width: 100%;
-    height: 100%;
-    max-width: 100%;
-    border-radius: 0;
-  }
+    overflow: hidden;
 }
+
+
+.hour{
+    margin-top: 1px;
+	color: green;
+	font-size: 12px;
+}
+
+.ratings i{
+text-align: center;
+	color: #ffda24;
+}
+
+html, body { padding: 0; margin: 0; }
+
+header video {
+position: absolute;
+top: 50%;
+left: 50%;
+height: 100%;
+min-width: 100%;
+min-height: 100%;
+
+z-index: 0;
+-ms-transform: translateX(-50%) translateY(-50%);
+-moz-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+}
+  
+header .container {
+position: relative;
+z-index: 2;
+}
+
+header .overlay {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: black;
+opacity: 0.2;
+z-index: 1;
+}
+
+header video {
+    /* display: none; */
+}
+/*style untuk popup */
+#popup {
+width:80%;
+min-width: 100%;
+min-height: 100%;
+z-index:1000;
+background-color: rgba(0,0,0,0.0);
+position: fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+margin:0;
+}
+#popup:target {
+opacity: 0;
+visibility: hidden;
+}@media {
+.popup-container{
+
+}
+}
+@media {
+.popup-container{
+
+}
+}
+.popup-container {
+  justify-content: center;
+  align-items: center;
+bottom:12%;
+width:90%;
+margin-left:5%;
+margin-right:5%;
+position: fixed;
+padding: 0px 5px 10px 5px;
+border-radius: 15px;
+background: rgba(43,43,43,0.0);
+color:#fff;
+border: 0px solid #FFF;
+}
+
 
 .boddbtno {border-bottom-left-radius: 5px;
-border-bottom-right-radius: 5px;width: 100%;height: auto;margin-top:0px;text-align;center;color:#fff !important;list-style:none;margin-left:0 !important;padding: 5px;!important;font-size:12px;display:inline-block;margin-bottom:12px;text-decoration:none !important;clear:both;}
+border-bottom-right-radius: 5px;width: 100%;height: auto;margin-top:5px;text-align;center;color:#fff !important;list-style:none;margin-left:0px !important;padding: 5px;!important;font-size:12px;display:inline-block;margin-bottom:10px;text-decoration:none !important;clear:both;}
 .boddbtno ul {margin:0;}
 .boddbtno li {list-style:none;display:inline;padding:0;margin:5px;}
 
-.downloadbtno{color: #f4f4f4; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important;padding:10px 14px 10px 14px;font-size:16px;font-weight:700;text-transform:uppercase;text-align:center;border-radius:10px;border: 0px solid #ed0066;letter-spacing:1px;transition: all 0.2s ease-out;text-decoration:none !important;}
-.downloadbtno {background: linear-gradient(45deg, #ff0d76, #ff0d76)}
-.downloadbtno:hover {background: linear-gradient(45deg, #de0073, #de0073);color: #f4f4f4}
+.downloadbtno{color: #f4f4f4; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important;padding:12px 16px 12px 16px;font-size:16px;font-weight:700;text-transform:uppercase;text-align:center;border-radius:10px;border: 0px solid #ed0066;letter-spacing:1px;transition: all 0.2s ease-out;text-decoration:none !important;}
+.downloadbtno {background: linear-gradient(45deg, #f0076b, #f0076b)}
+.downloadbtno:hover {background: linear-gradient(45deg, #de0763, #de0763);color: #f4f4f4}
 
-.demobtno{color: #fff; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important;padding:6px 6px 6px 7px;font-size:17px;font-weight:600;text-transform:uppercase;text-align:center;border-radius:12px;border: 2px solid #fff;letter-spacing:1px;transition: all 0.2s ease-out;text-decoration:none !important;}
-.demobtno {background: rgba(0, 0, 0, 0.2)}
-.demobtno:hover {background: linear-gradient(45deg, #ff0d76, #ff0d76);color: #f4f4f4}
 
-.demo{color: #fff; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important;padding:10px 14px 10px 14px;font-size:15px;font-weight:700;text-transform:uppercase;text-align:center;border-radius:10px;border: 0px solid #ed0066;letter-spacing:1px;transition: all 0.2s ease-out;text-decoration:none !important;}
-.demo {background: linear-gradient(45deg, #f0d10c, #f0d10c)}
-.demo:hover {background: linear-gradient(45deg, #dec004, #dec004);color: #f4f4f4}
+
+.boddbtna {border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;width: 100%;height: auto;margin-top:0px;text-align;center;color:#fff !important;list-style:none;margin-left:0px !important;padding: 5px;!important;font-size:12px;display:inline-block;margin-bottom:0px;text-decoration:none !important;clear:both;}
+.boddbtna ul {margin:0;}
+.boddbtna li {list-style:none;display:inline;padding:0;margin:5px;}
+.downloadbtna{margin-bottom:5px;color: #363636; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important;padding:4px 8px 5px 8px;font-size:10px;font-weight:700;text-align:center;border-radius:5px;border:0px solid #f62eff;letter-spacing:0px;transition: all 0.2s ease-out;text-decoration:none !important;}
+.downloadbtna {background: linear-gradient(45deg, #fff, #fff)}
+.downloadbtna:hover {background: linear-gradient(45deg, #dedede, #dedede);color: #363636}
+
+.downloadbtns{margin-bottom:0px;color: #1f1f1f; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important;padding:2px 7px 0px 7px;font-size:8px;font-weight:700;text-align:center;border-radius:5px;border: 0px solid #c9c9c9;letter-spacing:0px;transition: all 0.2s ease-out;text-decoration:none !important;}
+.downloadbtns {background:  rgba(255, 255, 255,0.9)}
+
+.fir-clickcircle {
+  border: 2px solid #575757;
+  height: 95px;
+margin: 1px;
+  width: 70px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fir-image-figure {
+justify-content: center;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+	padding: 10px 0px 10px 0px;
+background:  rgba(255,255,255,0.0);
+border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fir-image-figure .caption, .fir-image-figure figcaption {
+  padding-left: 15px;
+}
+
+html.wf-active .fir-image-figure .fig-author-figure-title {
+  font-family: var(--fir-font-header);
+font-weight: 400;
+  font-size: 15px;
+color: #fff;
+}
+
+.fir-image-figure .fig-author-figure-title-nama {
+  color: var(--fir-color-grey);
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  margin-left: 15px;
+margin-top: 5px;
+margin-bottom: 5px;
+color: #fff;
+}
+
+.fir-image-figure .fig-author-figure-title {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin-left: 15px;
+color: #fff;
+}
+
+.fir-imageover {
+  position: relative;
+  display: flex;
+}
+
+.fir-imageover-color {
+  height: 80px;
+  width: 80px;
+  
+  background: var(--fir-blue-twitter-alpha);
+  background-image: none;
+position: absolute;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+}
+
+.fir-imageover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fadeInFadeOut 2s infinite;
+}
+
+.navbar1{
+	width: 50%;
+	height: 30px;
+	position: relative;
+margin-left:25%;
+margin-right:25%;
+top:50%;
+  padding-top: 20px;
+        color: #FFF;
+background: dlinear-gradient(45deg, #a6a6a6, #8c8c8c);
+	z-index: 9;
+	display: flex;
+	align-items: center;
+justify-content: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.navbar2{
+	width: 145px;
+	height: 30px;
+	position: absolute;
+        color: #000;
+	top: 0;
+	left: 20px;
+  border-radius: 10px;
+margin: 20% 0px 0px 0px;
+	padding: 10px 10px 5px 5px;
+background: rgba(0,0,0,0.4);
+	z-index: 9;
+	display: flex;
+	align-items: center;
+}
+
+.navbar3{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+        color: #000;
+	right: 20px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+margin-bottom: 40px;
+	padding: 10px 10px 5px 5px;
+background: rgba(0,0,0,0.0);
+	z-index: 9;
+	display: flex;
+	align-items: center;
+}
+
+.navbar4{
+	width: 80%;
+	height: 15%;
+	position: fixed;
+        color: #000;
+	bottom: 15%;
+margin-left:5%;
+margin-right:5%;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+margin: 0px 0px 0px 0px;
+	padding: 10px 10px 5px 5px;
+background: rgba(0,0,0,0.4);
+	z-index: 9;
+	display: flex;
+	align-items: center;
+}
+
+
+/* story */
+.story {
+justify-content: center;
+  display: flex;
+border: 2px solid #f4f4f4;
+  align-items: center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 75px;
+  height: 95px;
+  border-radius: 8px;
+  margin: 3px;
+  transition: transform 100ms ease-in;
+  cursor: pointer;
+
+}
+
+
+.story__avatar {
+  margin: 10px;
+  color: blue;
+}
+
+.user__avatar {
+  border-radius: 50%;
+  width: 10px;
+}
+
+.storyy {
+  position: absolute;
+  bottom: 4px;
+  color: white;
+}
+
+.storyReel {
+  padding: 10px 0;
+  display: flex;
+}
+
+  .feed {
+	align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .story h4 {
+    font-size: 14px;
+  }
+
+  .story img {
+    width: 40px;
+  }
+
+
+.containere {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+.containere>span{
+  animation: shake 2s infinite;
+  font-size: 20px;
+  color: #fff;
+    margin-bottom: 25px;
+
+}
+
 
 .loader {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border: 2px solid #f4f4f4;
   border-radius: 50%;
   display: inline-block;
@@ -178,8 +358,8 @@ border-bottom-right-radius: 5px;width: 100%;height: auto;margin-top:0px;text-ali
 .loader:after {
   content: '';
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border: 2px solid #f4f4f4;
   border-radius: 50%;
   display: inline-block;
@@ -199,74 +379,39 @@ border-bottom-right-radius: 5px;width: 100%;height: auto;margin-top:0px;text-ali
   80% { transform:  scale(1.2)}
 }
 
-.pinggir {height: auto;margin-top:0;text-align;center;color:#fff !important;list-style:none;margin-left:0 !important;padding: 0px;!important;font-size:20px;display:inline-block;margin-bottom:5px;text-decoration:none !important;clear:both;}
-.pinggir ul {margin:0;}
-.pinggir li {list-style:none;display:inline;padding:0;margin:5px;}
-
-.tombolpinggir{color: #fff; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important;padding:0px 0px 0px 0px;font-size:20px;font-weight:700;text-transform:uppercase;text-align:center;border-radius:100px;border: 0px solid #fff;letter-spacing:1px;transition: all 0.2s ease-out;text-decoration:none !important;}
-
-.scrollDown {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  right: 0;
-  bottom: 15%;
-  transform: translate(-50%, 0);
-  z-index: 1000;
-}
-.scrollDown::before {
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  content: "";
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  transform: translate(-50%, 40px) scale(0.5, 0.5);
-  background: #ccc;
-  animation: scrollDown 1.5s linear infinite;
+.navbar{
+	width: 80%;
+	height: 55px;
+	position: relative;
+	justify-content: center;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+        color: #FFF;
+	left: 10%;
+	padding: 10px 5px 0px 5px;
+	margin-bottom: 15px;
+background: rgba(240, 240, 240, 0.0);
+	z-index: 9;
+	display: flex;
+	align-items: center;
+    justify-content: center;
 }
 
-@keyframes scrollDown {
-  0% {
-    transform: translate(-50%, 40px) scale(0.5, 0.5);
-    opacity: 1;
-    animation-timing-function: ease-in;
-  }
-  10% {
-    transform: translate(-50%, 20px) scale(0.4, 0.65);
-    animation-timing-function: ease-out;
-  }
-  20% {
-    transform: translate(-50%, 0px) scale(0.6, 0.4);
-    animation-timing-function: ease;
-  }
-  30% {
-    transform: translate(-50%, 0px) scale(0.5, 0.5);
-    animation-timing-function: ease-in;
-    opacity: 1;
-    filter: blur(0px);
-  }
-  50% {
-    transform: translate(-50%, 0px) scale(0.9, 0.9);
-    opacity: 0.4;
-    filter: blur(0.5px);
-  }
-  65% {
-    transform: translate(-50%, 20px) scale(1, 1.2);
-    filter: blur(1px);
-    opacity: 0.3;
-  }
-  80% {
-    transform: translate(-50%, 40px) scale(1.05, 0.95);
-    animation-timing-function: ease-out;
-    opacity: 0.4;
-    filter: blur(0.5px);
-  }
-  100% {
-    transform: translate(-50%, 40px) scale(0.5, 0.5);
-    opacity: 1;
-    filter: blur(0px);
-  }
+divo {
+  border: 2px solid #c4c4c4;
+margin-left:5px;
+margin-right:10px;
+  border-radius: 10px;
+  padding: 2px 5px 2px 5px;
+  display:inline;
+  color: #fff;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important;
+  font-size: 18px;
+  font-weight: 550;
+  text-decoration: none;
+}
+
+
+.kataaa {
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; !important; text-transform:uppercase;letter-spacing:1px;transition: all 0.2s ease-out;text-decoration:none !important;
 }
